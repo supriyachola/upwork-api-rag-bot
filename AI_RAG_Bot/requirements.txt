@@ -1,16 +1,21 @@
 # Core
+
 streamlit==1.35.0
 requests==2.31.0
 python-dotenv==1.0.1
 
 # PDF reading
+
 pymupdf==1.24.5
 
 # Local embeddings (runs on CPU, no API key)
+
 sentence-transformers==3.0.1
 
 # Vector store
-faiss-cpu==1.8.0
+
+faiss-cpu==1.14.2
 
 # Numerical
+
 numpy==1.26.4
