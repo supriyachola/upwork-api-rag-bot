@@ -1,21 +1,19 @@
 # Core
-
-streamlit==1.35.0
+streamlit==1.45.1
 requests==2.31.0
 python-dotenv==1.0.1
 
 # PDF reading
-
-pymupdf==1.24.5
+pymupdf==1.25.5
 
 # Local embeddings (runs on CPU, no API key)
-
-sentence-transformers==3.0.1
+sentence-transformers==3.4.1
 
 # Vector store
-
-faiss-cpu==1.14.2
+faiss-cpu==1.10.0
 
 # Numerical
+numpy==2.2.6
 
-numpy==1.26.4
+# Pillow — must be >= 11.x for Python 3.14 pre-built wheels
+pillow==11.2.1
