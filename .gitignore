@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+faiss_index.bin
+chunks_cache.pkl
+*.pkl
+*.bin
+.DS_Store
