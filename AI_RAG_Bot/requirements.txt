@@ -1,19 +1,11 @@
-# Core
-streamlit==1.45.1
-requests==2.31.0
-python-dotenv==1.0.1
+# No version pins — let pip pick the latest compatible versions
+# This avoids ALL wheel-not-found errors on Python 3.14
 
-# PDF reading
-pymupdf==1.25.5
-
-# Local embeddings (runs on CPU, no API key)
-sentence-transformers==3.4.1
-
-# Vector store
-faiss-cpu==1.10.0
-
-# Numerical
-numpy==2.2.6
-
-# Pillow — must be >= 11.x for Python 3.14 pre-built wheels
-pillow==11.2.1
+streamlit
+requests
+python-dotenv
+pymupdf
+sentence-transformers
+faiss-cpu
+numpy
+pillow
