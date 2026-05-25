@@ -41,8 +41,10 @@ LLM_MODEL     = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
 API_URL       = "https://api.deepinfra.com/v1/openai/chat/completions"
 
 # Paths where we cache the FAISS index so we don't re-embed every run
-FAISS_INDEX_PATH  = "faiss_index.bin"
-CHUNKS_CACHE_PATH = "chunks_cache.pkl"
+# Absolute paths so they work on Streamlit Cloud regardless of working directory
+BASE_DIR          = Path(__file__).parent
+FAISS_INDEX_PATH  = str(BASE_DIR / "faiss_index.bin")
+CHUNKS_CACHE_PATH = str(BASE_DIR / "chunks_cache.pkl")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -322,12 +324,16 @@ def answer_query(query: str,
 # Initialisation helper — called once when Streamlit starts
 # ══════════════════════════════════════════════════════════════════════════════
 
-def initialise(pdf_path: str = "data/upwork_api.pdf"):
+def initialise(pdf_path: str = None):
     """
     Load or build everything needed for the RAG pipeline.
     If a cached FAISS index exists we skip the expensive embedding step.
     Returns (embed_model, index, chunks).
     """
+    # Resolve PDF path — default to data/upwork_api.pdf next to this file
+    if pdf_path is None:
+        pdf_path = str(Path(__file__).parent / "data" / "upwork_api.pdf")
+
     embed_model = load_embedding_model()
 
     # Try loading from disk first (fast path)
