@@ -8,6 +8,7 @@ A fully local Retrieval-Augmented Generation (RAG) system that answers developer
 questions about the Upwork API.  The system reads a PDF, chunks the text, embeds
 it locally with `sentence-transformers`, stores vectors in FAISS, and uses the
 DeepInfra-hosted Meta-Llama-3.1-8B model to generate grounded answers.
+https://merida-rag-chatbot.streamlit.app/
 
 ---
 
